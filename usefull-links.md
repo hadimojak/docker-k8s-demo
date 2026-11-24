@@ -36,8 +36,12 @@
 
 ## ⬇️ دانلود دوره
 
-سایت کمکی:
-
 - [downloadly.ir](https://downloadly.ir/)
+
+---
+
+## ⬇️ لینک پروژه
+
+- [github](https://github.com/hadimojak/docker-k8s-demo)
 
 ---
