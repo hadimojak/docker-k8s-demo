@@ -2,7 +2,7 @@ import express from 'express'
 import swaggerUi from 'swagger-ui-express'
 
 const app = express()
-const port = 6000
+const port = Number(process.env.PORT) || 3000
 
 const swaggerDocument = {
   openapi: '3.0.0',

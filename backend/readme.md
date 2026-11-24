@@ -1,4 +1,4 @@
-# <span style="color:#58a6ff">🐳 Backend — اجرا با Docker</span>
+# 🐳 Backend — اجرا با Docker
 
 این پوشه سرور API پروژه است. اگر واژه‌هایی مثل Image و Container برایت تازه است، اول [`../full-readme.md`](../full-readme.md) را ببین.
 
@@ -15,6 +15,24 @@
 | `/api-docs/` | صفحه Swagger برای تست API در مرورگر |
 
 برنامه **داخل کانتینر** روی پورت `6000` گوش می‌دهد.
+
+---
+
+## اجرا بدون Docker (لوکال)
+
+```powershell
+cd backend
+npm i
+node server.js
+```
+
+بدون `PORT`، سرور روی `3000` بالا می‌آید (مرورگر پورت `6000` را مسدود می‌کند). تست:
+
+```text
+http://localhost:3000/health
+http://localhost:3000/api/messages
+http://localhost:3000/api-docs/
+```
 
 ---
 
@@ -49,6 +67,8 @@ CMD ["node", "server.js"]
 ```powershell
 docker build -t demo-backend:1.0 ./backend
 ```
+
+
 
 `demo-backend:1.0` یعنی اسم Image و نسخه‌اش.
 
