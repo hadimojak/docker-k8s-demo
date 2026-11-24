@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>docker و kubernetes دموی ساده</title>
+</head>
+
+<body>
+    <h1>دموی docker و kubernetes</h1>
+    <button onclick="loadMessage()">گرفتن پیام از backend</button>
+    <p id="result">برای دریافت پیام از backend کلیک کنید</p>
+
+    <script>
+        async function loadMessage() {
+            const result = document.getElementById('result');
+            result.textContent = 'در حال دریافت ...'
+
+            try {
+                const response = await fetch('/api/messages')
+                const data = await response.json()
+                console.log({ data });
+
+                result.textContent = data.message
+            } catch (error) {
+                result.textContent = 'خطا در دریافت پیام'
+            }
+        }
+    </script>
+
+</body>
+
+</html>
